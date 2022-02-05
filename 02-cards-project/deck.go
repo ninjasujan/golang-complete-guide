@@ -1,6 +1,10 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"io/ioutil"
+	"strings"
+)
 
 // create new type of deck - slice of string
 type deck []string
@@ -25,6 +29,14 @@ func (cards deck) print() {
 }
 
 // function multiple return value
-func deal(d deck, handSize int) (deck, deck) {
-	return d[:handSize], d[handSize:]
+func deal(cards deck, handSize int) (deck, deck) {
+	return cards[:handSize], cards[handSize:]
+}
+
+func (cards deck) toString() string {
+	return strings.Join([]string(cards), ",")
+}
+
+func (cards deck) saveFile(fileName string) error {
+	return ioutil.WriteFile(fileName, []byte(cards.toString()), 0644)
 }
