@@ -55,10 +55,8 @@ func newDeckFromFile(fileName string) deck {
 }
 
 func (cards deck) shuffle() {
-
 	source := rand.NewSource(time.Now().Unix())
 	rand := rand.New(source)
-
 	for i := range cards {
 		newPos := rand.Intn(len(cards) - 1)
 		cards[i], cards[newPos] = cards[newPos], cards[i]
