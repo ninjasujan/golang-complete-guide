@@ -5,7 +5,7 @@
       "name": "Launch Go Program",
       "type": "go",
       "request": "launch",
-      "program": "${workspaceFolder}/02-variables/main.go"
+      "program": "${workspaceFolder}/07-functions/"
     }
   ]
 }
