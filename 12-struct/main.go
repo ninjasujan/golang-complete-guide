@@ -2,7 +2,9 @@
 
 package main
 
-import "fmt"
+import (
+	"fmt"
+)
 
 func main() {
 
@@ -26,6 +28,22 @@ func main() {
 
 	fmt.Println("[Employee Salary]", employee.int)
 
+	student := createStudent("John", "20th", 3.5, "Computer Science")
+
+	fmt.Println(student)
+	fmt.Println(student.Person)
+
+}
+
+func createStudent(name string, class string, gpa float32, course string) Student {
+	return Student{
+		Person: &Person{
+			Name: name,
+		},
+		course: course,
+		gpa:    gpa,
+		class:  class,
+	}
 }
 
 type Person struct {
@@ -39,10 +57,15 @@ type Employee struct {
 	int
 }
 
+type Student struct {
+	class  string
+	course string
+	gpa    float32
+	*Person
+}
+
 func UpdateSalary(person *Person) {
-
 	person.Salary = 10000
-
 }
 
 func (person *Person) Display() {
