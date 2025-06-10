@@ -26,6 +26,7 @@ func main() {
 	fmt.Printf("Name: %s\n", person.Name)
 	fmt.Printf("City: %s\n", person.Address.City)
 	fmt.Printf("Instagram: %s\n", person.SocialMedia.Instagram)
+
 }
 
 func createPerson(name string, email string, address struct {
