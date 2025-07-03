@@ -5,7 +5,7 @@
       "name": "Launch Go Program",
       "type": "go",
       "request": "launch",
-      "program": "${workspaceFolder}/08-array-slice/main.go"
+      "program": "${workspaceFolder}/19-concurrency-1/main.go"
     }
   ]
 }
